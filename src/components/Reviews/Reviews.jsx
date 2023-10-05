@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import data from './Reviews.module.css';
+import styles from './Reviews.module.css';
 import { getReviewById } from 'services/Api';
 
 function Reviews() {
@@ -25,18 +25,18 @@ function Reviews() {
         <ul>
           {reviewInfo.map(({ id, author, content }) => {
             return (
-              <li key={id} className={data.reviewContainer}>
-                <b className={data.authorName}>Author: {author}</b>
-                <div className={data.ContentContainer}>
-                  <p className={data.ContentTitle}>Review:</p>
-                  <span className={data.Content}>{content}</span>
+              <li key={id} className={styles.reviewContainer}>
+                <b className={styles.authorName}>Author: {author}</b>
+                <div className={styles.ContentContainer}>
+                  <p className={styles.ContentTitle}>Review:</p>
+                  <span className={styles.Content}>{content}</span>
                 </div>
               </li>
             );
           })}
         </ul>
       ) : (
-        <p className={data.noReview}>Oops!There are no such reviews!</p>
+        <p className={styles.noReview}>Oops!There are no such reviews!</p>
       )}
     </>
   );

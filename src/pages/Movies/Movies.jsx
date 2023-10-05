@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import MovieList from 'components/MovieList/MovieList';
 import { useSearchParams } from 'react-router-dom';
 
-import data from './Movies.module.css';
+import styles from './Movies.module.css';
 
 function Movies() {
   const [searchMovies, setSearchMovies] = useState([]);
@@ -27,10 +27,10 @@ function Movies() {
   };
 
   return (
-    <div className={data.formStyle}>
-      <form onSubmit={onFormSubmit} className={data.form}>
+    <div className={styles.formStyle}>
+      <form onSubmit={onFormSubmit} className={styles.form}>
         <input
-          className={data.SearchFormInput}
+          className={styles.SearchFormInput}
           type="text"
           autoComplete="off"
           name="searchMovie"

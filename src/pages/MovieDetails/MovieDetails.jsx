@@ -1,6 +1,6 @@
 import { lazy, useState, useEffect } from 'react';
 import { Link, Route, Routes, useParams, useLocation } from 'react-router-dom';
-import data from './MovieDetails.module.css';
+import styles from './MovieDetails.module.css';
 import { getMovieById } from 'services/Api';
 
 const Cast = lazy(() => import('../../components/Cast/Cast'));
@@ -14,8 +14,8 @@ function MovieDetails() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    getMovieById(idMovie).then(data => {
-      setMovie(data);
+    getMovieById(idMovie).then(styles => {
+      setMovie(styles);
     });
   }, [idMovie]);
 
@@ -25,15 +25,15 @@ function MovieDetails() {
 
   const genres = movie.genres.map(genre => genre.name).join(', ');
   return (
-    <div className={data.general}>
-      <div className={data.movieDetails}>
-        <div className={data.movie}>
+    <div className={styles.general}>
+      <div className={styles.movieDetails}>
+        <div className={styles.movie}>
           <img
             src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}
             alt={movie.title}
           />
 
-          <div className={data.movieDescription}>
+          <div className={styles.movieDescription}>
             <div>
               <p>
                 <strong>Title: </strong>
@@ -43,7 +43,7 @@ function MovieDetails() {
                 <button>Back</button>
               </Link>
             </div>
-            <p className={data.overView}>
+            <p className={styles.overView}>
               <strong>Overview: </strong>
               {movie.overview}
             </p>
@@ -56,10 +56,10 @@ function MovieDetails() {
           </div>
         </div>
 
-        <div className={data.movieAdd}>
+        <div className={styles.movieAdd}>
           <Link
             to="cast"
-            className={data.movieCast}
+            className={styles.movieCast}
             state={{ from: location.state?.from }}
           >
             <button>Cast</button>
@@ -67,7 +67,7 @@ function MovieDetails() {
 
           <Link
             to="reviews"
-            className={data.movieReviews}
+            className={styles.movieReviews}
             state={{ from: location.state?.from }}
           >
             <button>Reviews</button>
