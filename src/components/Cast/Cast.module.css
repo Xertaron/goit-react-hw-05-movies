@@ -1,0 +1,39 @@
+.castContainer {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+}
+.actorImg {
+  overflow: hidden;
+}
+.actorImg > img {
+  max-width: 250px;
+  min-height: 375px;
+  object-fit: cover;
+}
+.actorItem {
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  overflow: hidden;
+}
+.actorInfo {
+  flex-grow: 1;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+.actorName {
+  font-size: 18px;
+  padding: 4px;
+  color: orange;
+}
+.actorChar {
+  font-size: 14px;
+  color: rgb(81, 84, 255);
+  padding: 4px;
+  word-wrap: break-word;
+}
